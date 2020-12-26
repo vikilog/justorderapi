@@ -5,5 +5,5 @@
     "HOST":"http://192.168.1.9",
     "VERSION":"v1",
     "secret": "Pings:TakingYourExperienceToANewLevel.",
-    "imagePath": "/home/pylab/Pylab/Flutter/justOrder/justorderApi/api/uploads/"
+    "imagePath": "/home/pylab/Documents/Pylab/justOrder/justorderApi/api/uploads"
 }

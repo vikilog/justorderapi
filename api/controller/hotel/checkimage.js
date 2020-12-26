@@ -1,8 +1,10 @@
 const multer = require('multer');
 const config = require('../../config/default.json');
+const path=require('path');
+const dir=path.join(__dirname+"../../../../");
 const storage = multer.diskStorage({
     destination: function(request, file, cb) {
-      cb(null,config.imagePath);
+      cb(null,dir+"/api/uploads/");
     },
     filename: function(request, file, cb) {
       cb(null,file.originalname);
