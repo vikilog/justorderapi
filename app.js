@@ -47,7 +47,8 @@ console.log(__dirname);
 //   });
 
 
-app.listen(PORT,() => console.log(`Example app listening at ${config.HOST}:${config.PORT}/api/${config.VERSION}`));
+// app.listen(PORT,() => console.log(`Example app listening at ${config.HOST}:${config.PORT}/api/${config.VERSION}`));
+app.listen(PORT,'0.0.0.0');
 
 
 
