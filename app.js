@@ -6,8 +6,8 @@ const morgan = require('morgan');
 const routes=require("./api/routes/appRoute");
 const config = require('./api/config/default.json'); 
 const readXlsxFile = require('read-excel-file/node');
- const city=require('./api/models/city');
 
+const PORT=process.env.PORT||config.PORT;
 app.use(cors());
 // use body parser so we can get info from POST and/or URL parameters
 app.use(bodyParser.urlencoded({ extended: false }));
@@ -47,7 +47,7 @@ console.log(__dirname);
 //   });
 
 
-app.listen(config.PORT, () => console.log(`Example app listening at ${config.HOST}:${config.PORT}/api/${config.VERSION}`));
+app.listen(PORT,() => console.log(`Example app listening at ${config.HOST}:${config.PORT}/api/${config.VERSION}`));
 
 
 
