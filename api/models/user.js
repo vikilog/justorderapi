@@ -15,6 +15,7 @@ let userSchema = new Schema({
     image: { type: String, default: 'profile.png' },
     created: Date,
     updated: Date,
+    token:{type:String}
 });
 
 

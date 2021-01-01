@@ -1,6 +1,6 @@
 const jwt = require('jsonwebtoken'); // used to create, sign, and verify tokens
 const userModel = require('../../models/user');
-const config = require('../../config/default.json'); // get our config file
+const config = require('config'); // get our config file
 const utility = require('../../utility/utility');
 
 let login = (req, res, next) => {

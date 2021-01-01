@@ -25,6 +25,7 @@ let hotelSchema=new Schema({
     hotelimage:{type:String,default:"default.jpg"},
     created: Date,
     updated: Date,
+    token:{type:String}
 });
 
 hotelSchema.plugin(AutoIncrement, { inc_field: 'id', id: "hotelId" });

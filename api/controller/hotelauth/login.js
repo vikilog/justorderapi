@@ -1,6 +1,6 @@
 const jwt = require('jsonwebtoken'); // used to create, sign, and verify tokens
 const hotelModel = require('../../models/hotel');
-const config = require('../../config/default.json'); // get our config file
+const config = require('config'); // get our config file
 const utility = require('../../utility/utility');
 
 let login = (req, res, next) => {
@@ -43,16 +43,16 @@ let generateToken = (req, res) => {
     // create a token with only our given payload
     // we don't want to pass in the entire user since that has the password
     const payload = {
-        email: req.data.user.email,
+        email: req.data.user.hotelemail,
         _id: req.data.user._id,
         id: req.data.user.id
     };
+    console.log(payload);
     const token = jwt.sign(payload, config.secret, {
         expiresIn: config.tokenDuration // expires in 24 hours
     });
 
-    delete req.data.user.password;
-
+    delete req.data.user.password;  
     // return the information including token as JSON
     res.json({
         success: true,

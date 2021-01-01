@@ -4,7 +4,7 @@ const app = express();
 const bodyParser = require('body-parser');
 const morgan = require('morgan');
 const routes=require("./api/routes/appRoute");
-const config = require('./api/config/default.json'); 
+const config = require('config'); 
 const readXlsxFile = require('read-excel-file/node');
 
 const PORT=process.env.PORT||config.PORT;

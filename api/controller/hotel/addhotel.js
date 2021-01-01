@@ -1,6 +1,6 @@
 let hotelModel = require('../../models/hotel');
 const jwt = require('jsonwebtoken'); // used to create, sign, and verify tokens
-const config = require('../../config/default.json'); // get our config file
+const config = require('config'); // get our config file
 const utility = require('../../utility/utility');
 const rooms=require('../../models/rooms');
 

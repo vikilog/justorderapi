@@ -58,8 +58,7 @@ let updateHotel=(request,response,next)=>{
     });
 };
 
-module.exports=[
-    findUser,
+module.exports=[   
     findHotel,
     updateHotel
 ];

@@ -1,5 +1,5 @@
 const multer = require('multer');
-const config = require('../../config/default.json');
+const config = require('config');
 const path=require('path');
 const dir=path.join(__dirname+"../../../../");
 const storage = multer.diskStorage({
