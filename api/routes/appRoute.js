@@ -9,6 +9,8 @@ appRoute.post("/login",controller.auth.login);
 appRoute.post("/hotel/login",controller.hotelauth.login);
 appRoute.get("/view/hotel/booking",controller.booking.list_booking);
 appRoute.get("/view/hotel/services",controller.hotel.services.list_service);
+appRoute.post('/restaurant/login',controller.restaurant.auth.login);
+appRoute.post('/restaurant/signup',controller.restaurant.auth.signup);
 appRoute.use(controller.authentication);
 appRoute.get("/user",controller.user.userdetails);
 appRoute.post("/add/hotel",controller.hotel.addhotel);
@@ -30,6 +32,7 @@ appRoute.post("/view/country/region",controller.region.find_region);
 appRoute.post("/add/hotel/booking",controller.booking.add_booking);
 appRoute.post("/delete/hotel/booking",controller.booking.delete_booking);
 appRoute.post("/update/hotel/booking/:bookingId",controller.booking.update_booking);
+appRoute.get("/hotel/check/booking/:roomtype",controller.booking.check_booking);
 appRoute.get("/update/device/token/:deviceId",controller.hotel.device);
 appRoute.post("/hotel/add/service",controller.hotel.services.add_service);
 
@@ -38,5 +41,6 @@ appRoute.post("/update/hotel/services/:serviceId",controller.hotel.services.upda
 appRoute.get("/hotel/service/analytic",controller.hotel.services.analytic);
 appRoute.post("/hotel/password/change",controller.hotelauth.change_password);
 
+appRoute.get('/restaurant/list',controller.restaurant.list);
 
 module.exports=appRoute;

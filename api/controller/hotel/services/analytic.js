@@ -66,6 +66,7 @@ let findService=(req,res,next)=>{
                     }
                 }
             ];
+            console.log(conditions);
             serviceModel.aggregate(conditions,(error,booking)=>{        
                     if(error){
                         console.log(error);
