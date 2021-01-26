@@ -3,7 +3,7 @@ const hotelModel=require("../../models/hotel");
 
 let getHotelDetails=(request,response)=>{
      
-    hotelModel.find({},(error,hotelList)=>{
+    hotelModel.find({addedby:request.decoded._id},(error,hotelList)=>{
         if(error){
             return response.json({ success: false, isError: true, error: error });
         }
@@ -12,5 +12,6 @@ let getHotelDetails=(request,response)=>{
         }
     });
 };
+
 
 module.exports=getHotelDetails;

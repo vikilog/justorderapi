@@ -3,14 +3,14 @@ let roomModel=require('../../models/rooms');
 let mongoose=require('mongoose');
 
 let getHotelDetail = (req, res,next) => {  
-
-    hotelsModel.findById(
-        {_id:req.decoded._id||req.params.hotelId},
+    let _id=req.params.hotelId||req.decoded._id;
+    hotelsModel.findById({_id:_id},
         (err, hotelDetail) => {
             if (err) {
                 console.log(err);
                 return res.json({ success: false, isError: true, error: err });
-            } else {              
+            } else {    
+                console.log(hotelDetail);          
                 if (hotelDetail!=null) { 
                     req.data={};                  
                     req.data.hotels=JSON.parse(JSON.stringify(hotelDetail));

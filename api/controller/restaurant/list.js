@@ -23,20 +23,7 @@ let findRestaurants=(req,res,next)=>{
         //                         },
         //                         'then': '$imageurl',
         //                         'else': {
-        //                             '$concat': [
-        //                                 {
-        //                                     '$toString': '$id'
-        //                                 }, '/', '$imageurl'
-        //                             ]
-        //                         }
-        //                     }
-        //                 }
-        //             ]
-        //         }
-        //     }
-        // }, 
-        // {
-        //     "$project":{
+        //                             'str
         //         "password":0
         //     }
         // }
@@ -55,7 +42,7 @@ let findRestaurants=(req,res,next)=>{
             return res.send({
                 success:true,
                 message:"List of restaurants",
-                resaurants:resaurants
+                restaurants:resaurants
             })
         }
     });

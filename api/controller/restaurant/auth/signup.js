@@ -37,13 +37,15 @@ let createUser = (req, res, next) => {
     let user = req.body;
     let userPayload = {
         email: user.email,
+        name:user.name,
         password: req.data.hashPassword,
         address:user.address,
         mobile:user.mobile,
-        city:user.city,
+        region:user.city,
         country:user.country,
         areacode:user.areacode,
-        createdby:req.decoded._id
+        createdby:req.decoded._id,
+        city:req.body.city
     };
     userModel.create(
         userPayload,

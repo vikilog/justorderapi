@@ -4,31 +4,27 @@ let AutoIncrement = require('mongoose-sequence')(mongoose);
 
 let restaurantSchema = new Schema({
     id: { type: Number },
-    name: String,
+    name:{type:String},
     email: { type: String, lowercase: true, unique: true, required: true },
     password: { type: String, required: true },
     address: { type: String },
     mobile: { type: String },
     imageurl: { type: String, default: 'hotel.png' },
     areacode: { type: String, required: true },
-    city: { type: String },
+    region: { type: String },
     country: { type: String },
+    city:{type:String},
+    isAdmin:{type:Boolean,default:true},
     createdby: { type: Schema.Types.ObjectId },
     coupns: [{
         'code': { type: String },
         'percentdiscount': { type: Number }
-    }],
-    admin: [
-        {
-            'adminemail': { type: String },
-            'adminpassword': { type: String }
-        }
-    ],
+    }],    
     charges:[
         {
             deliverycharge:{type:String,default:"0.0"},
             servicecharge:{type:String,default:"0.0"},
-            orderlimit:{type:String,default:"09"}
+            orderlimit:{type:String,default:"10"}
         }
     ],
     status:{type:Boolean,default:true},
