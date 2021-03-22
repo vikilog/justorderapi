@@ -4,11 +4,15 @@ let AutoIncrement = require('mongoose-sequence')(mongoose);
 
 let hotelSchema=new Schema({
     id: { type: Number },
+    role:{type:String,default:'hotel'},
     hotelname: { type: String, index: 'text' },
     hotelemail: { type: String, index: 'text' },
     hotelphone: { type: String },
     password: { type: String },
     citydistance:{type:String},
+    isAdmin:{type:Boolean,default:true},
+    isActive:{type:Boolean,default:true},
+    isDeleted:{type:Boolean,default:false},
     description:{type:String,default:"Add a description"},
     owneremail:{type:String},
     ownerphone:{type:String},

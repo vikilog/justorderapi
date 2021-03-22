@@ -45,7 +45,9 @@ let generateToken = (req, res) => {
     const payload = {
         email: req.data.user.hotelemail,
         _id: req.data.user._id,
-        id: req.data.user.id
+        id: req.data.user.id,
+        role:req.data.user.role,
+        isAdmin:req.data.user.isAdmin
     };
     console.log(payload);
     const token = jwt.sign(payload, config.secret, {
