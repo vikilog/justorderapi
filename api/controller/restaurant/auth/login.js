@@ -7,7 +7,7 @@ let login = (req, res, next) => {
     // find the user
     userModel.findOne({
         email: req.body.email
-    }, (err, user) => {
+    }, (err, user) => {       
         if (err) {
             return res.json({ success: false, isError: true, error: err });
         } else if (!user) {
@@ -35,15 +35,13 @@ let comparePassword = (req, res, next) => {
     });
 };
 
-let generateToken = (req, res) => {
-    // check if password matches
-    // if user is found and password is right
-    // create a token with only our given payload
-    // we don't want to pass in the entire user since that has the password
+let generateToken = (req, res) => {  
     const payload = {
         email: req.data.user.email,
         _id: req.data.user._id,
-        id: req.data.user.id
+        id: req.data.user.id,
+        role:req.data.user.role,
+        isAdmin:req.data.user.isAdmin,
     };
     const token = jwt.sign(payload, config.secret, {
         expiresIn: config.tokenDuration // expires in 24 hours

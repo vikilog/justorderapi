@@ -6,6 +6,7 @@ const checkImage=require("../controller/hotel/checkimage");
 
 appRoute.post("/signup",controller.auth.signup);
 appRoute.post("/login",controller.auth.login);
+appRoute.get('/currentuser',controller.auth.current_user);
 appRoute.post("/hotel/login",controller.hotelauth.login);
 appRoute.get("/view/hotel/booking",controller.booking.list_booking);
 appRoute.get("/view/hotel/services",controller.hotel.services.list_service);

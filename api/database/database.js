@@ -13,7 +13,7 @@ mongoose.connect(config.DATABASE, {
 
 
 mongoose.set('useFindAndModify', false);
-mongoose.set('debug', true);
+mongoose.set('debug', false);
 
 const database = mongoose.connection;
 database.on('error', console.error.bind(console, 'connection error:'));
