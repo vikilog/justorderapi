@@ -22,7 +22,7 @@ appRoute.post("/update/hotel/image/:hotelId",checkImage.single('hotelImage'),con
 appRoute.get("/view/rooms/:hotelId",controller.rooms.getRooms);
 appRoute.post("/add/room",controller.rooms.addRoom);
 appRoute.put("/update/rooms/:roomId",controller.rooms.updateRoom);
-appRoute.post("/update/rooms/image/:roomId",checkImage.single('roomImage'),controller.rooms.updateRoomImage);
+appRoute.post("/update/rooms/image/:roomId",controller.rooms.updateRoomImage);
 appRoute.get("/view/region",controller.region.regions);
 appRoute.post("/create/region",controller.region.addregions);
 appRoute.get('/view/city/:region',controller.city.getcity);

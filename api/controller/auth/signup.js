@@ -33,16 +33,9 @@ let genrateHashPassword = (req, res, next) => {
     });
 };
 
-let createUser = (req, res, next) => {
-    let user = req.body;
-    let userPayload = {
-        email: user.email,
-        password: req.data.hashPassword,
-        created: Date.now(),
-        updated: Date.now(),
-    };
+let createUser = (req, res, next) => {    
     userModel.create(
-        userPayload,
+        req.body,
         (err, user) => {
             if (err) {
                 return res.json({ success: false, isError: true, error: err });

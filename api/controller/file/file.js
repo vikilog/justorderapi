@@ -4,7 +4,8 @@ const config=require('config');
 module.exports={
     getFileUrl:async(imageReference)=>{
         try {
-            const fileUrl=await s3.getSignedUrl('getObject',{Bucket:'justorder',Key:imageReference,});
+            const fileUrl=s3.getSignedUrl('getObject',{Bucket:'justorder',Key:imageReference,});
+            console.log(fileUrl);
             return fileUrl;
         } catch (error) {
             return error;

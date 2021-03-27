@@ -15,7 +15,7 @@ app.use(bodyParser.json());
 require('./api/database/database');
 app.use(`/api/${config.VERSION}`, routes);
 app.use(`/api/${config.VERSION}`,foodRoutes)
-app.use(express.static(__dirname+"/api/uploads/"));
+app.use('/api/public',express.static(__dirname+"/api/uploads/"));
 app.use(morgan('dev'));
 console.log(__dirname);
 
@@ -41,8 +41,8 @@ console.log(__dirname);
 //     }
 //   });
 
-app.listen(80);
-// app.listen(PORT,ip.address(),() => console.log(`Example app listening at ${ip.address()}:${config.PORT}/api/${config.VERSION}`));
+//app.listen(80);
+app.listen(PORT,ip.address(),() => console.log(`Example app listening at ${ip.address()}:${config.PORT}/api/${config.VERSION}`));
 //app.listen(process.env.PORT,()=>console.log("Server is running"));
 
 

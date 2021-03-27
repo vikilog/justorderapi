@@ -12,11 +12,13 @@ let userSchema = new Schema({
     city: { type: String },
     address:{type:String},
     postcode:{type:String},
-    image: { type: String, default: 'profile.png' },
-    created: Date,
-    updated: Date,
+    image: { type: String, default: 'profile.png' },    
     token:{type:String}
-});
+},
+{
+    timestamps:true
+}
+);
 
 
 
