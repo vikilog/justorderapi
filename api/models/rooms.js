@@ -21,8 +21,8 @@ let roomSchema=new Schema({
     doubleRoomImage:{type:String,default:"default.jpg"},
     duplexRoomImage:{type:String,default:"default.jpg"},
     dulexRoomImage:{type:String,default:"default.jpg"},
-    created:{type:Date,default:Date.now()},
-    updated: {type:Date,default:Date.now()},
+    created:{type:Date,default:new Date()},
+    updated: {type:Date,default:new Date()},
 });
 
 roomSchema.plugin(AutoIncrement, { inc_field: 'id', id: "roomId" });

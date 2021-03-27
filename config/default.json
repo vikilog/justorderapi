@@ -1,9 +1,0 @@
-{
-    "PORT":3000,
-    "DATABASE":"mongodb+srv://justorder:justorder@cluster0.ff5ml.mongodb.net/justorder?retryWrites=true&w=majority",
-    "tokenDuration": "90d",
-    "HOST":"http://192.168.1.9",
-    "VERSION":"v1",
-    "secret": "Pings:TakingYourExperienceToANewLevel.",
-    "imagePath": "/home/ubuntu/main/api/uploads"
-}
